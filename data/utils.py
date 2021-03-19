@@ -87,3 +87,13 @@ def reverse_json(str_list):
         except Exception as e:
             error.append([line, str(e)])
     return data, error
+
+
+def obj_to_json(data):
+    """序列化
+    """
+    dataset = []
+    for dic in data:
+        line = json.dumps(dic, ensure_ascii=False)
+        dataset.append(line)
+    return dataset
